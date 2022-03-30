@@ -5,8 +5,6 @@
     use Aws\S3\Exception\S3Exception;
     // AWS Info
     $bucketName = 'diwoapppics';
-    $IAM_KEY = 'AKIARKMVBDBD25H2G4WN';
-    $IAM_SECRET = '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';
     // Connect to AWS
     try {
     // You may need to change the region. It will say in the URL when the bucket is open
