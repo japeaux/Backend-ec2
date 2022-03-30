@@ -1,0 +1,17 @@
+Listen 443
+<VirtualHost *:443>
+     ServerAdmin lucascovatti@hotmail.com.com
+     DocumentRoot /var/www/html
+     ServerName app.diwoapp.com.br
+     ServerAlias www.app.diwoapp.com.br
+     # Logs
+     # Certificates
+     SSLEngine on
+     SSLCertificateFile /etc/letsencrypt/live/app.diwoapp.com.br/cert.pem
+     SSLCertificateKeyFile /etc/letsencrypt/live/app.diwoapp.com.br/privkey.pem
+     SSLCertificateChainFile /etc/letsencrypt/live/app.diwoapp.com.br/chain.pem
+     SSLProtocol All -SSLv2 -SSLv3
+     SSLHonorCipherOrder on
+     SSLCipherSuite "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH EDH+aRSA !RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS"
+</VirtualHost>
+

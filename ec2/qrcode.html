@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+
+<script>
+function getMobileOperatingSystem() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Windows Phone must come first because its UA also contains "Android"
+    if (/windows phone/i.test(userAgent)) {
+        return "Windows Phone";
+    }
+
+    if (/android/i.test(userAgent)) {
+        return "Android";
+    }
+
+    // iOS detection from: http://stackoverflow.com/a/9039885/177710
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
+    }
+
+    return "unknown";
+}</script>
+<script>
+function getIdevento() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+</script>
+<script>
+function DetectAndServe(){
+    let os = getMobileOperatingSystem();
+
+        let codigo = getIdevento()["codigo"];
+        var url ="appdiwo://validarQRCODE/"+codigo;
+        var urliOS ="appdiwo://app/validarQRCODE/"+codigo;
+    if (os == "Android") {
+
+        window.location.href = url;
+    } else if (os == "iOS") {
+        window.location.href = url;
+    } else if (os == "Windows Phone") {
+        window.location.href = url;
+    } else {
+	window.location.href = "http://onelink.to/cscut7";
+    }
+}
+setTimeout(function () {    window.location.href = "http://onelink.to/cscut7";}, 2025);
+</script>
+</head>
+<body onload="DetectAndServe()">
+</body>
+</html>
+
+
+
+

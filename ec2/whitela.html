@@ -1,0 +1,198 @@
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+<script>
+function myFunction(){
+    var chkEmail = document.getElementById("chkEmail").checked;
+	var chkContato = document.getElementById("chkContato").checked;
+	var chkEndereco = document.getElementById("chkEndereco").checked;
+	var chkIdade = document.getElementById("chkIdade").checked;
+	var chkGenero = document.getElementById("chkGenero").checked;
+	var chkFoto = document.getElementById("chkFoto").checked;
+	var chkOutro = document.getElementById("chkOutro").checked;
+	var otherValue = document.getElementById("otherValue");
+	var otherValues = document.getElementById("otherValues");
+	var login = document.forms[0];
+  	var txt = "";
+  	var i;
+  	for (i = 0; i < login.length; i++) {
+    	if (login[i].checked) {
+      		txt = txt + login[i].value + " ";
+   	 	}
+    	if (chkOutro == true){
+	    	otherValue.style.display = "block";
+	  	}else{
+	    	otherValue.style.display = "none";
+	  	}
+  	}
+  	document.getElementById("order").value = "You ordered with: " + txt;
+  	// window.location.href = "https://onelink.to/cscut7";
+}
+
+function myFunctions(){
+    var chkNome = document.getElementById("chkNome").checked;
+	var chkDescricao = document.getElementById("chkDescricao").checked;
+	var chkRegras = document.getElementById("chkRegras").checked;
+	var chkData = document.getElementById("chkData").checked;
+	var chkLocal = document.getElementById("chkLocal").checked;
+	var chkFotos = document.getElementById("chkFotos").checked;
+	var chkOutros = document.getElementById("chkOutros").checked;
+	var chkPreco = document.getElementById("chkPreco").checked;
+	var chkMDP = document.getElementById("chkMDP").checked;
+	var chkLT = document.getElementById("chkLT").checked;
+	var chkLIM = document.getElementById("chkLIM").checked;
+	var chkAdicionais = document.getElementById("chkAdicionais").checked;
+	var otherValues = document.getElementById("otherValues");
+	var produto = document.forms[1];
+  	var txts = "";
+  	var i;
+  	for (i = 0; i < produto.length; i++) {
+    	if (produto[i].checked) {
+      		txts = txts + produto[i].value + " ";
+   	 	}
+    	if (chkOutro == true){
+	    	otherValue.style.display = "block";
+	  	}else{
+	    	otherValue.style.display = "none";
+	  	}
+  	}
+  	document.getElementById("orders").value = "You ordered with: " + txts;
+  	// window.location.href = "https://onelink.to/cscut7";
+}
+</script> 
+
+<script>
+function ShowOutro() {
+	var chkOutro = document.getElementById("chkOutro").checked;
+	if (chkOutro == true){
+    	otherValue.style.display = "block";
+  	}else{
+    	otherValue.style.display = "none";
+  	}
+
+}
+function ShowOutros() {
+	var chkOutros = document.getElementById("chkOutros").checked;
+	if (chkOutro == true){
+    	otherValues.style.display = "block";
+  	}else{
+    	otherValues.style.display = "none";
+  	}
+
+}
+</script>
+
+
+</head>
+<body >
+
+	<form>
+	  <fieldset>
+	  <legend> Quais infos eu quero do meu usuário? </legend>
+	    <div>
+	      <input type = "checkbox" id = "chkEmail" name = "login" value = "Email">
+	      <label for = "coding"> Email </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkContato" name = "login" value = "Contato">
+	      <label for = "music"> Contato </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkEndereco" name = "login" value = "Endereço">
+	      <label for = "art"> Endereço </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkIdade" nome = "login" value = "Idade">
+	      <label for = "sports"> Idade </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkGenero" nome = "login" value = "Genero">
+	      <label for = "cooking"> Gênero </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkFoto" nome = "login" value = "Foto">
+	      <label for = "cooking"> Foto </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkOutro" nome = "login" value = "outro" onclick="ShowOutro()" >
+	      <label for = "other"> Outro </label>
+	      <input type = "text" id = "otherValue" style="display: none;" nome = "outro">
+	    </div>
+	    <br><br>
+	    <input type="text" id="order" size="50">
+
+	    <input type="button" onclick="myFunction()" value="Próximo">
+
+	  </fieldset>
+	</form>
+
+	
+
+
+	<form>
+	  <fieldset>
+	  <legend> Quais infos sobre meu produto? </legend>
+	    <div>
+	      <input type = "checkbox" id = "chkNome" name = "login" value = "Nome">
+	      <label for = "coding"> Nome </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkDescricao" name = "login" value = "Descricao">
+	      <label for = "music"> Descrição </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkRegras" name = "login" value = "Regras">
+	      <label for = "art"> Regras </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkData" nome = "login" value = "Data">
+	      <label for = "sports"> Data </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkLocal" nome = "login" value = "Local">
+	      <label for = "cooking"> Local </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkPreco" nome = "login" value = "Preco">
+	      <label for = "cooking"> Preço </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkFotos" nome = "login" value = "Fotos">
+	      <label for = "cooking"> Foto </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkMDP" nome = "login" value = "MDP">
+	      <label for = "cooking"> Metodo de pagamento </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkLT" nome = "login" value = "LT">
+	      <label for = "cooking"> Limite tempo </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkLIM" nome = "login" value = "LIM">
+	      <label for = "cooking"> Limite itens max </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkAdicionais" nome = "login" value = "Adicionais">
+	      <label for = "cooking"> Adicionais </label>
+	    </div>
+
+	    <div>
+	      <input type = "checkbox" id = "chkOutros" nome = "login" value = "outros" onclick="ShowOutros()" >
+	      <label for = "other"> Outro </label>
+	      <input type = "text" id = "otherValues" style="display: none;" nome = "outros">
+	    </div>
+	    <br><br>
+	    <input type="text" id="orders" size="50">
+
+	    <input type="button" onclick="myFunctions()" value="Próximo">
+
+	  </fieldset>
+	</form>
+
+
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<ion-view title="Cadastra" id="criacontaemail" style="background:#000;color:#B347FF;font-weight: bold;">
+  <ion-nav-bar class = "bar-dark">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+  
+  <ion-content padding="true" class="has-header">
+  
+  
+       <style>
+      /* Style the buttons */
+      .btnlogin {
+        background:#B347FF;
+          border-color: #ccc;
+          border: solid 0 ;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+          margin-top: 15px;
+          cursor: pointer;
+          font-size: 14px;
+          width: 65%;
+          height: auto;
+          font-weight: bold;
+          color: #000;
+          padding:5px;
+          border-radius:8px 8px 8px 8px;
+          display: block;
+          margin-right:auto;
+          margin-left: auto;
+      }
+      .btnlogin:active {
+          background: #efefef;
+          color: #B347FF;
+      }
+      </style>  
+      
+      <div class="spacer" style="width: 300px; height: 5vh;"></div>
+
+      <p style="background-color: #000;color: #ccc;font-size: 12px;margin: auto;width: 100%;line-height: 100%;font-weight: bold"> Nome do negócio:</p>
+
+      <input type="text" placeholder="Digite aqui" ng-model="user.nomenegocio" style="background-color: #000;color: #efefef;font-size: 12px;margin: auto;width: 100%;line-height: 100%;margin-left: 10px;font-weight:italic;"  >
+      
+      <p style="background-color: #000;color: #ccc;font-size: 12px;margin: auto;width: 100%;line-height: 100%;font-weight: bold"> Seu número de whatsapp ou contato:</p>
+
+      <div class="row"  style=";background-color: #000;">
+          <div class="col-30">
+            <p style="width : 10vw ; height : auto;text-align: right;margin-top: 10px;font-size: 16px;" > +55</p>
+          </div>
+          <div class="col">
+             <input type="number" placeholder="Digite aqui" ng-model="user.contato" style="vertical-align:middle;color:#ccc;font-size: 12px;background-color: #000;text-align: left;margin-top: auto">
+          </div>
+        </div>   
+
+
+    
+<!-- 
+      <input type="text" placeholder="Digite aqui" ng-model="user.contato" style="background-color: #000;color: #efefef;font-size: 12px;margin: auto;width: 100%;line-height: 100%;margin-left: 10px;font-weight:italic;"  >
+ -->
+      <p style="background-color: #000;color: #ccc;font-size: 12px;margin: auto;width: 100%;line-height: 100%;font-weight: bold"> Seu senha:</p>
+
+      <input type="password" placeholder="Digite aqui"  style="background-color: #000;color: #efefef;font-size: 12px;width: 100%;margin: auto;line-height: 100%;margin-left: 10px;font-weight:italic;" ng-model="user.password" >
+
+      <div class="spacer" style="height: 7px;"></div>
+
+
+
+      <p style="background-color: #000;color: #ccc;font-size: 12px;margin: auto;width: 100%;line-height: 100%;font-weight: bold" >Qual tipo do seu negócio</p>
+
+      <ion-checkbox ng-model="comercial.checked"
+                      ng-change="Comer()" style="background:#000;color: #B347FF;width: 90%;margin:auto; display:block;border-width: 0px;">Comércio</ion-checkbox>
+
+      <ion-checkbox ng-model="servico.checked"
+      ng-change="Serv()"  style="background:#000;color: #B347FF;width: 90%;margin:auto; display:block;border-width: 0px;">Serviço</ion-checkbox>
+
+
+      <div class="spacer" style="height: 7px;"></div>
+
+      <div class = "row" >
+        <div class = "col" >
+    
+        </div>
+        <div class = "col" >
+          <img src="img/notes.png"  style="height: auto; 
+                 width: 18vw; 
+                display: block;
+                margin-right: auto;
+                margin-left: auto;
+                object-fit: cover;" >
+
+        </div>
+         <div class = "col" >
+            <img src="img/vai.png"  style="height: auto; 
+                 width: 18vw; 
+                display: block;
+                margin-right: auto;
+                margin-left: auto;
+                object-fit: cover;" ng-click='proximo()'>
+         </div>
+      </div> 
+   
+   
+
+  </ion-content>
+</ion-view>

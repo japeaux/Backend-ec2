@@ -1,0 +1,83 @@
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+<script>
+
+  window.addEventListener("load", function(event) {
+  });	
+function CriaPush(){
+    var chkPushInApp = document.getElementById("chkPushInApp").checked;
+	var chkPushMarketing = document.getElementById("chkPushMarketing").checked;
+	
+	var login = document.forms[0];
+  	var txt = "";
+  	var i;
+  	const urlParams = new URLSearchParams(location.search);
+  	const myParam = urlParams.get('nomenegocio'); 
+	// if(chkEmail){
+ //  		  var url = 'https://app.diwoapp.com.br/TUCE.php?nomenegocio='+myParam;
+  		 	
+	// 	  var xhttp = new XMLHttpRequest();
+	// 	  xhttp.onreadystatechange = function() {
+	// 	    if (this.readyState == 4 && this.status == 200) {
+	// 	      	//document.getElementById("demo").innerHTML = this.responseText;
+	// 	      	window.location.href = "https://app.diwoapp.com.br/whitela/whitelaCriaProduto.html?nomenegocio="+myParam;
+	// 	     }
+	// 	  };
+	// 	  xhttp.open("POST", url , true);
+	// 	  xhttp.send();
+ 		
+ //  	}
+ 	window.location.href = "https://app.diwoapp.com.br/whitela/whitelaCriaFeed.html?nomenegocio="+myParam;
+}
+function ShowOutro() {
+	var chkOutro = document.getElementById("chkOutro").checked;
+	if (chkOutro == true){
+    	otherValue.style.display = "block";
+  	}else{
+    	otherValue.style.display = "none";
+  	}
+
+}
+ 
+</script>
+
+
+</head>
+<body >
+
+	<form>
+	  <fieldset>
+	  <legend> Ter notificações via push? </legend>
+	  		<div>
+	      <input type = "checkbox" id = "chkPushInApp" name = "login" value = "true">
+	      <label >  Para ações no app (confirmações, cancelamentos, etc...) </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkPushMarketing" name = "login" value = "Email">
+	      <label for = "coding">  Para marketing (Aviso de ofertas, notícias, etc...)  </label>
+	    </div>
+	    <!-- <input type="text" id="order" size="50">
+	    	 -->
+	     <button type="button" onclick="CriaPush()" >Próximo</button>
+	  </fieldset>
+	</form>
+
+	
+	
+<!-- 
+	<p id="demo"></p>
+
+	
+
+	<form action="uploadCriaEmail.php" method="post" enctype="multipart/form-data">
+    	
+    	<input type="file" name="criaemail" />
+    	<input type="submit" value="Enviar"/>
+
+	</form>
+ -->
+</body>
+</html>

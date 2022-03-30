@@ -1,0 +1,166 @@
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+<script>
+
+  window.addEventListener("load", function(event) {
+  	document.getElementById("chkHistorico").checked = false;
+    document.getElementById("chkHistorico").disabled = true;
+    document.getElementById("chkInfos").checked = false;
+    document.getElementById("chkInfos").disabled = true;
+  });	
+function CriaFeed(){
+    var chkFeed = document.getElementById("chkFeed").checked;
+	
+	var login = document.forms[0];
+  	var txt = "";
+  	var i;
+  	const urlParams = new URLSearchParams(location.search);
+  	const myParam = urlParams.get('nomenegocio'); 
+	// if(chkEmail){
+ //  		  var url = 'https://app.diwoapp.com.br/TUCE.php?nomenegocio='+myParam;
+  		 	
+	// 	  var xhttp = new XMLHttpRequest();
+	// 	  xhttp.onreadystatechange = function() {
+	// 	    if (this.readyState == 4 && this.status == 200) {
+	// 	      	//document.getElementById("demo").innerHTML = this.responseText;
+	// 	      	window.location.href = "https://app.diwoapp.com.br/whitela/whitelaCriaProduto.html?nomenegocio="+myParam;
+	// 	     }
+	// 	  };
+	// 	  xhttp.open("POST", url , true);
+	// 	  xhttp.send();
+ 		
+ //  	}
+  	window.location.href = "https://app.diwoapp.com.br/whitela/whitelaCriaProduto.html?nomenegocio="+myParam;
+}
+function ClickPerfil(){
+	var chkPerfil = document.getElementById("chkPerfil").checked;
+	 var chkPushInApp = document.getElementById("chkPushInApp").checked;
+	var chkPushMarketing = document.getElementById("chkPushMarketing").checked;
+	if(chkPerfil){
+		document.getElementById("chkHistorico").checked = true;
+    	document.getElementById("chkInfos").checked = true;
+	}else{
+		document.getElementById("chkHistorico").checked = false;
+    	document.getElementById("chkInfos").checked = false;
+	}
+}
+ 
+</script>
+
+
+</head>
+<body >
+
+
+
+	<form>
+	  <fieldset>
+	  <legend> Ter feed de notícias? (controlado pelo adm.) </legend>
+	  	<div>
+	      <input type = "checkbox" id = "chkFeed" name = "login" value = "true">
+	      <label >  Feed de notícias para usuários (Somente ADM posta)</label>
+	    </div>
+	   <!--  <div>
+	      <input type = "checkbox" id = "chkPushMarketing" name = "login" value = "Email">
+	      <label for = "coding">  Para marketing (Aviso de ofertas, notícias, etc...)  </label>
+	    </div> -->
+	    <!-- <input type="text" id="order" size="50">
+	    	 -->
+	  </fieldset>
+	</form>
+
+	<form>
+	  <fieldset>
+	  <legend> Ter notificações via push? </legend>
+	  		<div>
+	      <input type = "checkbox" id = "chkPushInApp" name = "login" value = "true">
+	      <label >  Para ações no app (confirmações, cancelamentos, etc...) </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkPushMarketing" name = "login" value = "Email">
+	      <label for = "coding">  Para marketing (Aviso de ofertas, notícias, etc...)  </label>
+	    </div>
+	    <!-- <input type="text" id="order" size="50">
+	    	 -->
+	     
+	  </fieldset>
+	</form>
+
+	<form>
+	  <fieldset>
+	  	<div>
+	      <input type = "checkbox" id = "chkPerfil" name = "login" value = "true"  onclick="ClickPerfil()">
+	      <label >  Relatórios e dados </label>
+	    </div>
+	      <br>
+	  <legend> Ter relatórios e dados do seu app?</legend>
+	  	<div>
+	      <input type = "checkbox" id = "chkHistorico" name = "login" value = "true">
+	      <label >  Histórico de dados/tempo </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkInfos" name = "login" value = "true">
+	      <label >  Lista de clientes </label>
+	    </div>
+	   <!--  <div>
+	      <input type = "checkbox" id = "chkPushMarketing" name = "login" value = "Email">
+	      <label for = "coding">  Para marketing (Aviso de ofertas, notícias, etc...)  </label>
+	    </div> -->
+	    <!-- <input type="text" id="order" size="50">
+	    	 -->
+	  </fieldset>
+	</form>
+
+	<form>
+	  <fieldset>
+	      <br>
+	  <legend> Adicionais</legend>
+	  	<div>
+	      <input type = "checkbox" id = "chkFAQ" name = "login" value = "true">
+	      <label >  FAQ (Sobre) </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkSS" name = "login" value = "true">
+	      <label >  Divulgação (SocialShare) </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkSS" name = "login" value = "true">
+	      <label >  Avaliação/comentários do usuário </label>
+	    </div>
+	   <!--  <div>
+	      <input type = "checkbox" id = "chkSS" name = "login" value = "true">
+	      <label >  Chat com o usuário </label>
+	    </div> -->
+	   <!--  <div>
+	      <input type = "checkbox" id = "chkPushMarketing" name = "login" value = "Email">
+	      <label for = "coding">  Para marketing (Aviso de ofertas, notícias, etc...)  </label>
+	    </div> -->
+	    <!-- <input type="text" id="order" size="50">
+	    	 -->
+	  </fieldset>
+	</form>
+
+
+
+	   <br>
+
+	   <button type="button" onclick="CriaFeed()" >Próximo</button>
+	
+	
+<!-- 
+	<p id="demo"></p>
+
+	
+
+	<form action="uploadCriaEmail.php" method="post" enctype="multipart/form-data">
+    	
+    	<input type="file" name="criaemail" />
+    	<input type="submit" value="Enviar"/>
+
+	</form>
+ -->
+</body>
+</html>

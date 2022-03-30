@@ -1,0 +1,116 @@
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+<script>
+
+  window.addEventListener("load", function(event) {
+    console.log("Todos os recursos terminaram o carregamento!");
+    document.getElementById("chkNome").checked = true;
+    document.getElementById("chkNome").disabled = true;
+  });	
+function CriaLogin(){
+    var chkEmail = document.getElementById("chkEmail").checked;
+	var chkContato = document.getElementById("chkContato").checked;
+	var chkEndereco = document.getElementById("chkEndereco").checked;
+	var chkIdade = document.getElementById("chkIdade").checked;
+	var chkGenero = document.getElementById("chkGenero").checked;
+	var chkFoto = document.getElementById("chkFoto").checked;
+	var chkOutro = document.getElementById("chkOutro").checked;
+	var otherValue = document.getElementById("otherValue");
+	var otherValues = document.getElementById("otherValues");
+	var chkNomeNegocio = document.getElementById("chkNomeNegocio");
+	var login = document.forms[0];
+  	var txt = "";
+  	var i;
+  	const urlParams = new URLSearchParams(location.search);
+  	const myParam = urlParams.get('nomenegocio'); 
+	if(chkEmail){
+  		  var url = 'https://app.diwoapp.com.br/TUCE.php?nomenegocio='+myParam;
+  		 	
+		  var xhttp = new XMLHttpRequest();
+		  xhttp.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		      	//document.getElementById("demo").innerHTML = this.responseText;
+		      	window.location.href = "https://app.diwoapp.com.br/whitela/whitelaCriaProduto.html?nomenegocio="+myParam;
+		     }
+		  };
+		  xhttp.open("POST", url , true);
+		  xhttp.send();
+ 		
+  	}
+}
+function ShowOutro() {
+	var chkOutro = document.getElementById("chkOutro").checked;
+	if (chkOutro == true){
+    	otherValue.style.display = "block";
+  	}else{
+    	otherValue.style.display = "none";
+  	}
+
+}
+ 
+</script>
+
+
+</head>
+<body >
+
+	<form>
+	  <fieldset>
+	  <legend> Quais infos eu quero do meu usuário? </legend>
+	  	<div>
+	      <input type = "checkbox" id = "chkNome" name = "login" value = "true">
+	      <label > Nome </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkEmail" name = "login" value = "Email">
+	      <label for = "coding"> Email </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkContato" name = "login" value = "Contato">
+	      <label for = "music"> Contato </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkEndereco" name = "login" value = "Endereço">
+	      <label for = "art"> Endereço </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkIdade" nome = "login" value = "Idade">
+	      <label for = "sports"> Idade </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkGenero" nome = "login" value = "Genero">
+	      <label for = "cooking"> Gênero </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkFoto" nome = "login" value = "Foto">
+	      <label for = "cooking"> Foto </label>
+	    </div>
+	    <div>
+	      <input type = "checkbox" id = "chkOutro" nome = "login" value = "outro" onclick="ShowOutro()" >
+	      <label for = "other"> Outro </label>
+	      <input type = "text" id = "otherValue" style="display: none;" nome = "outro">
+	    </div>
+	    <br>
+	   
+	  </fieldset>
+	</form>
+		<br>
+	  <button type="button" onclick="CriaLogin()" >Próximo</button>
+	
+<!-- 
+	<p id="demo"></p>
+
+	
+
+	<form action="uploadCriaEmail.php" method="post" enctype="multipart/form-data">
+    	
+    	<input type="file" name="criaemail" />
+    	<input type="submit" value="Enviar"/>
+
+	</form>
+ -->
+</body>
+</html>
